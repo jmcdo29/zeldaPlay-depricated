@@ -1,0 +1,29 @@
+{
+  "name": "zeldaplay",
+  "version": "0.0.1",
+  "description": "A web application to be hosted on Heroku to help in cahracter tracking for a D20 home-brew",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "nyc --reporter=lcov --reporter=text mocha --reporter=dot --exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PerfectOrphan31/zeldaPlay.git"
+  },
+  "keywords": [
+    "Zelda",
+    "Node",
+    "Heroku",
+    "Pug",
+    "Mocha",
+    "Travis",
+    "D20"
+  ],
+  "author": "Jay McDoniel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PerfectOrphan31/zeldaPlay/issues"
+  },
+  "homepage": "https://github.com/PerfectOrphan31/zeldaPlay#readme"
+}
