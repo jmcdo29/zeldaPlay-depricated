@@ -8,6 +8,10 @@ yarn-error.log*
 # Text files
 *.txt
 
+#Salesforce Files That Are Accidentally Created & Overlooked
+*.sfdx
+sfdx
+
 # Runtime data
 pids
 *.pid
