@@ -1,0 +1,71 @@
+extends ./layout/layout.pug
+
+block head_content
+  h1 Hooray! Let's make your character
+block body_content
+  form(action="/character_prof", method="post")
+    .general_info
+      label(for="name") Name
+      input.general#name(type="text", name="name", required)
+      br
+      label(for="description") Character Description
+      textarea.general#description(name="description", cols="30", rows="10")
+    .race
+      p This is where I will put the select buttons for character race selection as well as hovers for descriptions of each race and what class they play.
+      //hylian,goron,zora,sheikah,rito,half-goron,half-zora,gerudo,twili,fairy
+      input.race#hylian(type="radio", name="race", value="Hylian") 
+      label(for="Hylian") Hylian
+      br
+      input.race#goron(type="radio", name="race", value="Goron") 
+      label(for="Goron") Goron
+      br
+      input.race#zora(type="radio", name="race", value="Zora")
+      label(for="Zora") Zora
+      br
+      input.race#sheikah(type="radio", name="race", value="Sheikah")
+      label(for="Sheikah") Sheikah
+      br
+      input.race#gerudo(type="radio", name="race", value="Gerudo")
+      label(for="Gerudo") Gerudo
+      br
+      input.race#twili(type="radio", name="race", value="Twili")
+      label(for="Twili") Twili
+      br
+      input.race#rito(type="radio", name="race", value="Rito")
+      label(for="Rito") Rito
+      br
+      input.race#fairy(type="radio", name="race", value="Fairy")
+      label(for="Fairy") Fairy
+      br
+      input.race#half-goron(type="radio", name="race", value="Half-Goron")
+      label(for="Half-Goron") Half-Goron
+      br
+      input.race#half-zora(type="radio", name="race", value="Half-Zora")
+      label(for="Half-Zora") Half-Zora
+      br
+    .attributes
+      p Here will be the input boxes for the charcater stats (strength, dexterity, etc.) Will talk to Noah about how this is done. There will be helpful instructions and insights for those who want/need it. 
+      label(for="Strength") Strength
+      input.attribute#strength(type="number", name="Strength", required)
+      br
+      label(for="Dexterity") Dexterity
+      input.attribute#dexterity(type="number", name="Dexterity", required)
+      br
+      label(for="Constitution") Constitution
+      input.attribute#constitution(type="number", name="Constitution", required)
+      br
+      label(for="Intelligence") Intelligence
+      input.attribute#intelligence(type="number", name="Intelligence", required)
+      br
+      label(for="Wisdom") Wisdom
+      input.attribute#wisdom(type="number", name="Wisdom", required)
+      br
+      label(for="Charisma") Charisma
+      input.attribute#charisma(type="number", name="Charisma", required)
+      br
+      label(for="HP") Health Points
+      input.attribute#hp(type="number", name="HP", required)
+      br
+      label(for="MP") Magic Points
+      input.attribute#mp(type="nunmber", name="MP", required)
+    input(type="submit", value="Create My Charcater")
