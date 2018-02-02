@@ -1,0 +1,23 @@
+extends ./layout/layout.pug
+
+block head_content 
+  h1 Congratulations on your new character!
+block body_content
+  p.
+    Please ensure that everything looks correct with your character. Eventually there will be a button for editing and saving your character, but for now, this is just all intial set up and making sure that things are looking "mostly" okay, before getting into the more difficult operations.
+  .charcater
+    .general
+      p Name: #{character.name}
+      p Description: #{character.description}
+      p Health Points: #{character.health_points} 
+      p Magic Points: #{character.magic_points} 
+      p Experience: #{character.experience}
+    .race
+      p Race: #{character.race}
+    .attributes
+      p Strength: #{character.strength} 
+      p Dexterity: #{character.dexterity} 
+      p Constitution: #{character.constitution} 
+      p Intelligence: #{character.intelligence} 
+      p Wisdom: #{character.wisdom} 
+      p Charisma: #{character.charisma} 

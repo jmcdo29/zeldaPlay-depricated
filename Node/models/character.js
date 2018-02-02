@@ -20,51 +20,50 @@ const characterSchema = mong.Schema({
     type: String,
     require: true
   },
-  decription: {
+  description: {
     type: String
   },
   race: {
     type: String,
     required: true
   },
-  attributes: {
-    strength: {
-      type: Number,
-      require: true
-    },
-    dexterity: {
-      type: Number,
-      require: true
-    },
-    constitution: {
-      type: Number,
-      require: true
-    },
-    wisdom: {
-      type: Number,
-      require: true
-    },
-    intelligence: {
-      type: Number,
-      require: true
-    },
-    charisma: {
-      type: Number,
-      require: true
-    },
-    health_points: {
-      type: Number,
-      require: true
-    },
-    magic_points: {
-      type: Number,
-      require: true
-    },
-    experience: {
-      type: Number,
-      require: true
-    }
+  strength: {
+    type: Number,
+    require: true
+  },
+  dexterity: {
+    type: Number,
+    require: true
+  },
+  constitution: {
+    type: Number,
+    require: true
+  },
+  wisdom: {
+    type: Number,
+    require: true
+  },
+  intelligence: {
+    type: Number,
+    require: true
+  },
+  charisma: {
+    type: Number,
+    require: true
+  },
+  health_points: {
+    type: Number,
+    require: true
+  },
+  magic_points: {
+    type: Number,
+    require: true
+  },
+  experience: {
+    type: Number,
+    require: true
   }
+
   /* inventory: [
     {
       description: String,
@@ -91,4 +90,4 @@ const characterSchema = mong.Schema({
   }] */
 });
 
-module.exports = mongoose.Schema('Charcter', characterSchema);
+let Character = (module.exports = mong.model("Charcter", characterSchema));
