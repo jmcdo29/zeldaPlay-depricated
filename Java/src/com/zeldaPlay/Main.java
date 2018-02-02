@@ -13,7 +13,7 @@ public class Main{
     System.out.println("Great! Nice to meet you "+name+"! How strong are you?");
     int str = kb.nextInt();
     System.out.println(str>15?"Wow! That's pretty strong!":"Oh, I'm guessing you rely on magic or something.");
-    System.out.rpintln("How agile are you?");
+    System.out.println("How agile are you?");
     int dex = kb.nextInt();
     System.out.println(dex>15?"Very nice! I'm guessing you can't take a hit though.":"Oh, well, I hope you can take a few hits on the field.");
     System.out.println("Speaking of which, what is your constitution?");
