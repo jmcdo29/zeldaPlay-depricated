@@ -66,3 +66,7 @@ typings/
 
 # VSCode Settings
 .vscode
+
+# Java
+*.class
+.idea
