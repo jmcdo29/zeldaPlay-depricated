@@ -25,8 +25,25 @@
 * Skills
 * Weapon Skills
 * Inventory
-
-
+---
+## Race Guide
+### Hylian
+> Fighter Class
+### Goron
+> Barbarian Class
+### Zora
+> Ranger Class (Magic and Ranged User)
+### Sheikah
+> Rogue/Assassin
+### Rito
+> Ranger (Bow/Range)
+### Gerudo
+> Monk 
+### Twili
+> Ranger (Dual Wielder)
+### Fairy
+> Mage (Wizard/Battle-Mage, Healer/Cleric, Synergist/Saboteur depending on choice)
+---
 ## Java Verion
 >A Java web application. Will be completed before the Node counterpart to have a stronger structure, more re-usable code, and better preformance (or so that's the idea).
 

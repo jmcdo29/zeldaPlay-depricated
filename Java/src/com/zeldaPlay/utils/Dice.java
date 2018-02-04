@@ -10,4 +10,10 @@ public class Dice{
     result = toIntExact(Math.round(Math.random() * sides) + 1);
     return result;
   }
+
+  public static Integer rollDice(int sides, int bonus){
+    Integer result;
+    result = toIntExact(Math.round(Math.random() * sides) + 1 + bonus);
+    return result;
+  }
 }
