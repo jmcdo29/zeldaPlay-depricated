@@ -40,6 +40,10 @@ public class Character {
     this.experience = 0;
   }
 
+  private Integer calcBonus(int stat){
+    return stat % 2 == 0 ? (stat - 10) /2 : (stat - 11) / 2;
+  }
+
   public void setName(String name) {
     this.name = name;
   }
@@ -50,32 +54,32 @@ public class Character {
 
   public void setStr(int str) {
     this.strength = str;
-    this.strBon = str % 2 == 0 ? (str - 10) / 2 : (str - 11) / 2;
+    this.strBon = calcBonus(str);
   }
 
   public void setDex(int dex) {
     this.dexterity = dex;
-    this.dexBon = dex % 2 == 0 ? (dex - 10) / 2 : (dex - 11) / 2;
+    this.dexBon = calcBonus(dex);
   }
 
   public void setCon(int con) {
     this.constitution = con;
-    this.conBon = con % 2 == 0 ? (con - 10) / 2 : (con - 11) / 2;
+    this.conBon = calcBonus(con);
   }
 
   public void setIntel(int intel) {
     this.intelligence = intel;
-    this.intBon = intel % 2 == 0 ? (intel - 10) / 2 : (intel - 11) / 2;
+    this.intBon = calcBonus(intel);
   }
 
   public void setWis(int wis) {
     this.wisdom = wis;
-    this.wisBon = wis % 2 == 0 ? (wis - 10) / 2 : (wis - 11) / 2;
+    this.wisBon = calcBonus(wis);
   }
 
   public void setCha(int cha) {
     this.charisma = cha;
-    this.chaBon = cha % 2 == 0 ? (cha - 10) / 2 : (cha - 11) / 2;
+    this.chaBon = calcBonus(cha);
   }
 
   public void setHP(int hp) {
@@ -140,6 +144,10 @@ public class Character {
 
   public void makeNote(String note){
     this.notes.add(note);
+  }
+
+  public ArrayList<String> readNotes(){
+    return this.notes;
   }
   
   public Integer getStrBon(){
