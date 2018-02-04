@@ -1,7 +1,7 @@
 package com.zeldaPlay;
 
 import java.util.Scanner;
-
+import com.zeldaPlay.utils.*;
 
 public class Main{
 
@@ -34,14 +34,16 @@ public class Main{
     Character character = new Character(name, "", "Hylian", str, dex, con, intel, wis, cha, hp, mp);
     System.out.println("For now, I'm assuming you're a Hylian, but that can change later");
     System.out.println("Your name is:\t\t\t"+character.getName());
-    System.out.println("Your strength is:\t\t"+character.getStr());
-    System.out.println("Your dexterity is:\t\t"+character.getDex());
-    System.out.println("Your constitution is:\t\t"+character.getCon());
-    System.out.println("Your intelligence is:\t\t"+character.getInt());
-    System.out.println("Your wisdom is:\t\t\t"+character.getWis());
-    System.out.println("Your charisam is:\t\t"+character.getCha());
+    System.out.println("Your strength is:\t\t"+character.getStr()+"\t\t"+character.getStrBon());
+    System.out.println("Your dexterity is:\t\t"+character.getDex()+"\t\t"+character.getDexBon());
+    System.out.println("Your constitution is:\t\t"+character.getCon()+"\t\t"+character.getConBon());
+    System.out.println("Your intelligence is:\t\t"+character.getInt()+"\t\t"+character.getIntBon());
+    System.out.println("Your wisdom is:\t\t\t"+character.getWis()+"\t\t"+character.getWisBon());
+    System.out.println("Your charisam is:\t\t"+character.getCha()+"\t\t"+character.getChaBon());
     System.out.println("Your health points are:\t\t"+character.getHealth());
     System.out.println("Your magic points are:\t\t"+character.getMagic());
+    System.out.println("An example of a roll of a D20 would be: \t" + Dice.rollDice(20));
+    System.out.println("An example of a roll of a D12 would be: \t" + Dice.rollDice(12));
     kb.close();
   }
 
