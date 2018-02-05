@@ -7,13 +7,13 @@ public class Dice{
 
   public static Integer rollDice(int sides){
     Integer result;
-    result = toIntExact(Math.round(Math.random() * sides) + 1);
+    result = toIntExact(Math.round(Math.random() * sides)%sides + 1);
     return result;
   }
 
   public static Integer rollDice(int sides, int bonus){
     Integer result;
-    result = toIntExact(Math.round(Math.random() * sides) + 1 + bonus);
+    result = toIntExact(Math.round(Math.random() * sides)%sides + 1 + bonus);
     return result;
   }
 }
