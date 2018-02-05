@@ -1,4 +1,4 @@
-package com.zeldaPlay;
+package com.zeldaPlay.utils;
 
 import java.util.*;
 
@@ -25,7 +25,7 @@ public class Character {
   
   public Character(){};
 
-  public Character(String name, String desc, String race, int str, int dex, int con, int intel, int wis, int cha, int hp, int mp){
+  public Character(String name, String desc, String race, int str, int dex, int con, int intel, int wis, int cha){
     this.name = name;
     this.description = desc;
     this.race = race;
@@ -35,9 +35,17 @@ public class Character {
     this.setIntel(intel);
     this.setWis(wis);
     this.setCha(cha);
-    this.setHP(hp);
-    this.setMP(mp);
+    this.calcHp();
+    this.calcMp();
     this.experience = 0;
+  }
+
+  private void calcHp(){
+    this.healthPoints = 48 + this.conBon;
+  }
+
+  private void calcMp(){
+    this.magicPoints = 20 + this.wisBon;
   }
 
   private Integer calcBonus(int stat){
