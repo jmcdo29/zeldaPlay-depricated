@@ -1,4 +1,4 @@
-package com.zeldaPlay.utils;
+package com.zeldaPlay.Player;
 
 import java.util.*;
 
@@ -27,7 +27,7 @@ public class ZeldaPlayer {
   private boolean dead;
   private ArrayList<String> notes;
 
-  public ZeldaPlayer(String name, String desc, String race, int str, int dex, int con, int intel, int wis, int cha){
+  ZeldaPlayer(String name, String desc, String race, int str, int dex, int con, int intel, int wis, int cha){
     this.name = name;
     this.description = desc;
     this.race = race;
