@@ -1,6 +1,5 @@
 package com.zeldaPlay.utils;
 
-import java.util.*;
 import static java.lang.Math.toIntExact;
 
 public class Dice{

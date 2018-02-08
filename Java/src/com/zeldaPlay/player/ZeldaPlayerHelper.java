@@ -1,31 +1,47 @@
-package com.zeldaPlay.Player;
+package com.zeldaPlay.player;
 
 import com.zeldaPlay.utils.Inputs;
 
+import java.util.Scanner;
+
 public class ZeldaPlayerHelper{
+
+  private static final Scanner kb = new Scanner(System.in);
+
+  private static int verify(){
+    String stat;
+    do{
+      stat = kb.nextLine();
+    }while(! Inputs.verifyIntInput(stat, true));
+    return Integer.valueOf(stat);
+  }
 
   public static ZeldaPlayer makeZeldaPlayer() {
     System.out.println("Please enter your name.");
-    String name = Inputs.getStringInput();
+    //String name = Inputs.getStringInput();
+    String name;
+    do{
+      name = kb.nextLine();
+    }while(! Inputs.verifyStringInput(name));
     System.out.println("Great! Nice to meet you " + name + "! How strong are you?");
-    int str = Inputs.getIntInput(true);
+    int str = verify();
     System.out.println(str > 15 ? "Wow! That's pretty strong!" : "Oh, I'm guessing you rely on magic or something.");
     System.out.println("How agile are you?");
-    int dex = Inputs.getIntInput(true);
+    int dex = verify();
     System.out.println(dex > 15 ? "Very nice! I'm guessing you can't take a hit though."
         : "Oh, well, I hope you can take a few hits on the field.");
     System.out.println("Speaking of which, what is your constitution?");
-    int con = Inputs.getIntInput(true);
+    int con = verify();
     System.out.println(con > 15 ? "You can definitely take a hit!" : "Well, try not to get hit too much");
     System.out.println("How smart would you say you are?");
-    int intel = Inputs.getIntInput(true);
+    int intel = verify();
     System.out.println(intel > 15 ? "Oh don't we have a wiz kid over here!" : "Eh, intelligence is overrated anyways.");
     System.out.println("What really matters is how sensible you are.");
-    int wis = Inputs.getIntInput(true);
+    int wis = verify();
     System.out.println(wis > 15 ? "You definitely aren't stupid in the streets."
         : "Maybe you shouldn't do the talking in a party. Don't want to offend anyone.");
     System.out.println("Now, can you lie?");
-    int cha = Inputs.getIntInput(true);
+    int cha = verify();
     System.out.println(cha > 15 ? "Remind me not to let you near my money. I'll never get it back"
         : "Oh, good to know *snickers* sucker.");
 

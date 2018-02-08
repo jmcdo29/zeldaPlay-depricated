@@ -1,7 +1,7 @@
 package com.zeldaPlay;
 
 import com.zeldaPlay.utils.*;
-import com.zeldaPlay.Player.*;
+import com.zeldaPlay.player.*;
 
 public class Main {
 

@@ -1,9 +1,13 @@
 package com.zeldaPlay.utils;
 
 import com.sun.istack.internal.NotNull;
-import com.zeldaPlay.Player.*;
+import com.zeldaPlay.player.*;
+
+import java.util.Scanner;
 
 public class Menus{
+
+  private static final Scanner kb = new Scanner(System.in);
 
   private static void healthMenu(@NotNull ZeldaPlayer zeldaPlayer) {
     boolean keepShowing;
@@ -22,13 +26,21 @@ public class Menus{
         System.out.println(menu);
       }
       do {
-        input = Inputs.getCharInput();
+        String choice;
+        do{
+          choice = kb.nextLine();
+        }while(! Inputs.verifyCharInput(choice));
+        input = choice.charAt(0);
         keepShowing = false;
         switch (input) {
           case '1':
             System.out.println("Enter the amount of hit points you restored. And don't try to go over your max!");
             int restore;
-            restore = Inputs.getIntInput(false);
+            String in;
+            do{
+              in = kb.nextLine();
+            }while(! Inputs.verifyIntInput(in, false));
+            restore = Integer.valueOf(in);
             if (zeldaPlayer.getHealth() + restore > zeldaPlayer.getMaxHP()) {
               System.out.println("I said DON'T try to go over your max, you idiot. I'm setting your hp to max.");
               zeldaPlayer.setHP(zeldaPlayer.getMaxHP());
@@ -50,7 +62,10 @@ public class Menus{
           case '2':
             int dmg;
             System.out.println("So you took some damage, huh? Well, tell me how much you took.");
-            dmg = Inputs.getIntInput(false);
+            do{
+              in = kb.nextLine();
+            }while(! Inputs.verifyIntInput(in, false));
+            dmg = Integer.valueOf(in);
             if (zeldaPlayer.getHealth() - dmg <= 0) {
               if (zeldaPlayer.getHealth() - dmg <= -10) {
                 System.out.println(
@@ -95,7 +110,11 @@ public class Menus{
     System.out.println("Please chose one of the following options. If you would like to quit press \"q\".\n" + menu);
     char choice;
     do {
-      choice = Inputs.getCharInput();
+      String input;
+      do{
+        input = kb.nextLine();
+      }while(! Inputs.verifyCharInput(input));
+      choice = input.charAt(0);
       switch (choice) {
         case '1':
           System.out.println("You rolled a " + Dice.rollDice(4) + menu);

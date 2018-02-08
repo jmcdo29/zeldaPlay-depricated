@@ -1,4 +1,4 @@
-package com.zeldaPlay.Player;
+package com.zeldaPlay.player;
 
 import java.util.*;
 
@@ -28,8 +28,8 @@ public class ZeldaPlayer {
   private ArrayList<String> notes;
 
   ZeldaPlayer(String name, String desc, String race, int str, int dex, int con, int intel, int wis, int cha){
-    this.name = name;
-    this.description = desc;
+    this.setName(name);
+    this.setDesc(desc);
     this.race = race;
     this.setStr(str);
     this.setDex(dex);
@@ -45,20 +45,20 @@ public class ZeldaPlayer {
   }
 
   private void calcHp(){
-    this.healthPoints = 48 + this.conBon;
-    this.maxHealthPoints = this.healthPoints;
+    this.setHP(48 + this.getConBon());
+    this.maxHealthPoints = this.getHealth();
   }
 
   private void calcMp(){
-    this.magicPoints = 20 + this.wisBon;
-    this.maxMagicPoints = this.magicPoints;
+    this.setMP(20 + this.getWisBon());
+    this.maxMagicPoints = this.getMagic();
   }
 
   private int calcBonus(int stat){
     return stat % 2 == 0 ? (stat - 10) /2 : (stat - 11) / 2;
   }
 
-  public void setName(String name) {
+  private void setName(String name) {
     this.name = name;
   }
 
@@ -221,14 +221,14 @@ public class ZeldaPlayer {
   }
 
   public void printStats(){
-    System.out.println("Your name is:\t\t\t\t"+this.name);
-    System.out.println("Your current and max hit points are:\t"+this.healthPoints+"\t"+this.maxHealthPoints);
-    System.out.println("Your current and max magic points are:\t"+this.magicPoints+"\t"+this.maxMagicPoints);
-    System.out.println("Your strength is:\t\t\t"+this.strength+"\t"+this.strBon);
-    System.out.println("Your dexterity is:\t\t\t"+this.dexterity+"\t"+this.dexBon);
-    System.out.println("Your constitution is:\t\t\t"+this.constitution+"\t"+this.conBon);
-    System.out.println("Your intelligence is:\t\t\t"+this.intelligence+"\t"+this.intBon);
-    System.out.println("Your wisdom is:\t\t\t\t"+this.wisdom+"\t"+this.wisBon);
-    System.out.println("Your charisma is:\t\t\t"+this.charisma+"\t"+this.chaBon);
+    System.out.println("Your name is:\t\t\t\t"+this.getName());
+    System.out.println("Your current and max hit points are:\t"+this.getHealth()+"\t"+this.getMaxHP());
+    System.out.println("Your current and max magic points are:\t"+this.getMagic()+"\t"+this.getMaxMP());
+    System.out.println("Your strength is:\t\t\t"+this.getStr()+"\t"+this.getStrBon());
+    System.out.println("Your dexterity is:\t\t\t"+this.getDex()+"\t"+this.getDexBon());
+    System.out.println("Your constitution is:\t\t\t"+this.getCon()+"\t"+this.getConBon());
+    System.out.println("Your intelligence is:\t\t\t"+this.getInt()+"\t"+this.getIntBon());
+    System.out.println("Your wisdom is:\t\t\t\t"+this.getWis()+"\t"+this.getWisBon());
+    System.out.println("Your charisma is:\t\t\t"+this.getCha()+"\t"+this.getChaBon());
   }
 }
