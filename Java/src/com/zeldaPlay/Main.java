@@ -5,7 +5,7 @@ import com.zeldaPlay.player.*;
 
 public class Main {
 
-  public static void main(String[] args) {
+  public static void main(String... args) {
     try {
       System.out.println("Hello!");
       System.out.println(

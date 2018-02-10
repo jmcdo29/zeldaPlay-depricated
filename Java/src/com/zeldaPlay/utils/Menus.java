@@ -1,6 +1,5 @@
 package com.zeldaPlay.utils;
 
-import com.sun.istack.internal.NotNull;
 import com.zeldaPlay.player.*;
 
 import java.util.Scanner;
@@ -9,7 +8,7 @@ public class Menus{
 
   private static final Scanner kb = new Scanner(System.in);
 
-  private static void healthMenu(@NotNull ZeldaPlayer zeldaPlayer) {
+  private static void healthMenu(ZeldaPlayer zeldaPlayer) {
     boolean keepShowing;
     String menu = "Chose the correct option:\n1. \tRestore Health\n2. \tLose Health\nq. \tGo Back";
     System.out.println("So you need to make a change to your health?\n" + menu);
@@ -96,15 +95,15 @@ public class Menus{
     } while (zeldaPlayer.getDead() || zeldaPlayer.getDying());
   }
 
-  private static void magicMenu(@NotNull ZeldaPlayer zeldaPlayer) {
+  private static void magicMenu(ZeldaPlayer zeldaPlayer) {
 
   }
 
-  private static void expMenu(@NotNull ZeldaPlayer zeldaPlayer) {
+  private static void expMenu(ZeldaPlayer zeldaPlayer) {
 
   }
 
-  public static void track(@NotNull ZeldaPlayer zeldaPlayer) {
+  public static void track(ZeldaPlayer zeldaPlayer) {
     boolean keepGoing = true;
     String menu = "\n\n1. \tRoll D4\n2. \tRoll D6\n3. \tRoll D8\n4. \tRoll D10\n5. \tRoll D12\n6. \tRoll D20\n7. \tRoll D100 (Percentage Die)\n8. \tModify Health\n9. \tModify Magic\ne. \tAdd Experience\ns. \tShow Stats\nq. \tQuit\n";
     System.out.println("Please chose one of the following options. If you would like to quit press \"q\".\n" + menu);
