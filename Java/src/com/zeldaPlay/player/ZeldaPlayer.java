@@ -1,8 +1,8 @@
-package com.zeldaPlay.utils;
+package com.zeldaPlay.player;
 
 import java.util.*;
 
-public class Character {
+public class ZeldaPlayer {
   private String name;
   private String description;
   private String race;
@@ -13,7 +13,9 @@ public class Character {
   private int wisdom;
   private int charisma;
   private int healthPoints;
+  private int maxHealthPoints;
   private int magicPoints;
+  private int maxMagicPoints;
   private int experience;
   private int strBon;
   private int dexBon;
@@ -21,13 +23,13 @@ public class Character {
   private int intBon;
   private int wisBon;
   private int chaBon;
+  private boolean dying;
+  private boolean dead;
   private ArrayList<String> notes;
-  
-  public Character(){};
 
-  public Character(String name, String desc, String race, int str, int dex, int con, int intel, int wis, int cha){
-    this.name = name;
-    this.description = desc;
+  ZeldaPlayer(String name, String desc, String race, int str, int dex, int con, int intel, int wis, int cha){
+    this.setName(name);
+    this.setDesc(desc);
     this.race = race;
     this.setStr(str);
     this.setDex(dex);
@@ -37,22 +39,26 @@ public class Character {
     this.setCha(cha);
     this.calcHp();
     this.calcMp();
+    this.setDead(false);
+    this.setDying(false);
     this.experience = 0;
   }
 
   private void calcHp(){
-    this.healthPoints = 48 + this.conBon;
+    this.setHP(48 + this.getConBon());
+    this.maxHealthPoints = this.getHealth();
   }
 
   private void calcMp(){
-    this.magicPoints = 20 + this.wisBon;
+    this.setMP(20 + this.getWisBon());
+    this.maxMagicPoints = this.getMagic();
   }
 
-  private Integer calcBonus(int stat){
+  private int calcBonus(int stat){
     return stat % 2 == 0 ? (stat - 10) /2 : (stat - 11) / 2;
   }
 
-  public void setName(String name) {
+  private void setName(String name) {
     this.name = name;
   }
 
@@ -110,39 +116,39 @@ public class Character {
     return this.race;
   }
 
-  public Integer getStr() {
+  public int getStr() {
     return this.strength;
   }
 
-  public Integer getDex() {
+  public int getDex() {
     return this.dexterity;
   }
 
-  public Integer getCon() {
+  public int getCon() {
     return this.constitution;
   }
 
-  public Integer getInt() {
+  public int getInt() {
     return this.intelligence;
   }
 
-  public Integer getWis() {
+  public int getWis() {
     return this.wisdom;
   }
 
-  public Integer getCha(){
+  public int getCha(){
     return this.charisma;
   }
 
-  public Integer getHealth() {
+  public int getHealth() {
     return this.healthPoints;
   }
 
-  public Integer getMagic() {
+  public int getMagic() {
     return this.magicPoints;
   }
 
-  public Integer getExp() {
+  public int getExp() {
     return this.experience;
   }
 
@@ -158,27 +164,71 @@ public class Character {
     return this.notes;
   }
   
-  public Integer getStrBon(){
+  public int getStrBon(){
     return this.strBon;
   }
 
-  public Integer getDexBon(){
+  public int getDexBon(){
     return this.dexBon;
   }
 
-  public Integer getConBon(){
+  public int getConBon(){
     return this.conBon;
   }
 
-  public Integer getIntBon(){
+  public int getIntBon(){
     return this.intBon;
   }
 
-  public Integer getWisBon(){
+  public int getWisBon(){
     return this.wisBon;
   }
 
-  public Integer getChaBon(){
+  public int getChaBon(){
     return this.chaBon;
+  }
+
+  public int getMaxHP(){
+    return this.maxHealthPoints;
+  }
+
+  public int getMaxMP(){
+    return this.maxMagicPoints;
+  }
+
+  public void changeHP(int change){
+    this.healthPoints += change;
+  }
+
+  public void changeMP(int change){
+    this.magicPoints += change;
+  }
+
+  public void setDying(boolean dying){
+    this.dying = dying;
+  }
+
+  public boolean getDying(){
+    return this.dying;
+  }
+
+  public void setDead(boolean dead){
+    this.dead = dead;
+  }
+
+  public boolean getDead(){
+    return this.dead;
+  }
+
+  public void printStats(){
+    System.out.println("Your name is:\t\t\t\t"+this.getName());
+    System.out.println("Your current and max hit points are:\t"+this.getHealth()+"\t"+this.getMaxHP());
+    System.out.println("Your current and max magic points are:\t"+this.getMagic()+"\t"+this.getMaxMP());
+    System.out.println("Your strength is:\t\t\t"+this.getStr()+"\t"+this.getStrBon());
+    System.out.println("Your dexterity is:\t\t\t"+this.getDex()+"\t"+this.getDexBon());
+    System.out.println("Your constitution is:\t\t\t"+this.getCon()+"\t"+this.getConBon());
+    System.out.println("Your intelligence is:\t\t\t"+this.getInt()+"\t"+this.getIntBon());
+    System.out.println("Your wisdom is:\t\t\t\t"+this.getWis()+"\t"+this.getWisBon());
+    System.out.println("Your charisma is:\t\t\t"+this.getCha()+"\t"+this.getChaBon());
   }
 }
